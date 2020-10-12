@@ -1,0 +1,36 @@
+/* 
+  Localizable.strings
+  Mask Tracker
+
+  Created by Vladyslav Kampov on 11.10.2020.
+  
+*/
+
+"list.masks" = "Ваши маски";
+"newMaskCard.title" = "Добавить маску";
+"newMaskCard.description" = "Есть ещё одна?";
+"title.addMask" = "Новая маска";
+"newMask.maskNameLabel" = "Дайте ей имя";
+"newMask.maskNamePlaceholder" = "Новая маска";
+"newMask.random" = "Подорбрать";
+"newMask.pickType" = "Выберите тип маски";
+"newMask.typeDescription" = "Мы подскажем вам рекомендуемое время использования маски базируясь на её типе";
+"Medical" = "Медицинская";
+"FFP3" = "FFP3";
+"Custom" = "Другая";
+"newMask.recomendedTime" = "Рекомендованное время использования";
+"newMask.time" = "%d часов";
+"newMask.add" = "Добавить";
+"mask.used" = "Используется";
+"mask.left" = "Осталось";
+"mask.times" = "Использовано раз";
+"mask.stop" = "Стоп";
+"mask.start" = "Старт";
+"mask.alert.title" = "Ну вот!";
+"mask.alert.description" = "Пришло время сменить маску или фильтр. Сбросьте таймер используя кнопку вверху экрана как только сделаете это.";
+"mask.info.title" = "Позаботьтесь о себе!";
+"mask.info.description" = "Не используйте маску дольше рекомендуемого времени, меняте фильтр или маску вовремя.\n\nИспользуйте кнопку вверху экрана для сброса таймера как только вы заменили маску или фильтр.";
+"notification.title" = "Время что-то менять!";
+"notification.body" = "Замените маску или соответствующий фильтр";
+"widget.title" = "";
+"widget.description" = "";

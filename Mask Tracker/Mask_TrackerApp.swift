@@ -6,12 +6,26 @@
 //
 
 import SwiftUI
+import UserNotifications
 
 @main
-struct Mask_TrackerApp: App {
+struct MaskTrackerApp: App {
+    let persistenceController = PersistenceController.shared
+
+    func onLoad() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+            if success {
+                print("Notifications are enabled!")
+            } else if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+    }
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MaskListView()
+                .environment(\.managedObjectContext, persistenceController.container.viewContext).onAppear(perform: onLoad)
         }
     }
 }

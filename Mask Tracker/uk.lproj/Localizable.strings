@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  Mask Tracker
+
+  Created by Vladyslav Kampov on 11.10.2020.
+  
+*/
+
+
+"Your masks" = "Your masks";
+"Create new mask" = "Create new mask";
+"Have another one?" = "Have another one?";
+"Add mask" = "Add mask";
+"Name your mask" = "Name your mask";'
+"Brand new mask" = "Brand new mask";
+"Randomize" = "Randomize";
+"Pick the mask type" = "Pick the mask type";
+"Mask Type" = "Mask Type";
+"Recomended time of use" = "Recomended time of use";
+"hours" = "hours";
+"Add" = "Add";

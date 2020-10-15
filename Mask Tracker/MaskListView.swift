@@ -23,7 +23,7 @@ struct MaskListView: View {
                     ForEach(masks) { m in
                         MaskListItemView(mask: m)
                     }
-                    NewMaskListItemView()
+                    NewMaskListItemView(listLength: masks.count)
                 }
                 .padding(.all)
             }.frame(width: UIScreen.main.bounds.width).navigationTitle(Text("list.masks"))

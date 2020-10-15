@@ -9,13 +9,16 @@
 "list.masks" = "Ваши маски";
 "newMaskCard.title" = "Добавить маску";
 "newMaskCard.description" = "Есть ещё одна?";
+"newMaskCard.descriptionZero" = "";
 "title.addMask" = "Новая маска";
 "newMask.maskNameLabel" = "Дайте ей имя";
 "newMask.maskNamePlaceholder" = "Новая маска";
 "newMask.random" = "Подорбрать";
 "newMask.pickType" = "Выберите тип маски";
-"newMask.typeDescription" = "Мы подскажем вам рекомендуемое время использования маски базируясь на её типе";
+"newMask.typeDescription" = "Мы учтем тип маски и подскажем вам, как долго её можно носить";
 "Medical" = "Медицинская";
+"Fabric" = "Тканевая";
+"FFP2" = "FFP2";
 "FFP3" = "FFP3";
 "Custom" = "Другая";
 "newMask.recomendedTime" = "Рекомендованное время использования";
@@ -32,5 +35,5 @@
 "mask.info.description" = "Не используйте маску дольше рекомендуемого времени, меняте фильтр или маску вовремя.\n\nИспользуйте кнопку вверху экрана для сброса таймера как только вы заменили маску или фильтр.";
 "notification.title" = "Время что-то менять!";
 "notification.body" = "Замените маску или соответствующий фильтр";
-"widget.title" = "";
-"widget.description" = "";
+"widget.title" = "Mask Tracker Виджет";
+"widget.description" = "Этот виджет показывает сколько процеетов времени использовалась маска";

@@ -7,15 +7,34 @@
 */
 
 
-"Your masks" = "Your masks";
-"Create new mask" = "Create new mask";
-"Have another one?" = "Have another one?";
-"Add mask" = "Add mask";
-"Name your mask" = "Name your mask";'
-"Brand new mask" = "Brand new mask";
-"Randomize" = "Randomize";
-"Pick the mask type" = "Pick the mask type";
-"Mask Type" = "Mask Type";
-"Recomended time of use" = "Recomended time of use";
-"hours" = "hours";
-"Add" = "Add";
+"list.masks" = "Ваші маски";
+"newMaskCard.title" = "Додати маску";
+"newMaskCard.description" = "Маєте ще одну?";
+"newMaskCard.descriptionZero" = "";
+"title.addMask" = "Додати маску";
+"newMask.maskNameLabel" = "Назвіть вашу маску";
+"newMask.maskNamePlaceholder" = "Новенька масочка";
+"newMask.random" = "";
+"newMask.pickType" = "Оберіть тип маски";
+"newMask.typeDescription" = "Ми врахуємо тип маски та підкажемо, як довго її можна носити";
+"Medical" = "Медична";
+"Fabric" = "Тканинна";
+"FFP2" = "FFP2";
+"FFP3" = "FFP3";
+"Custom" = "Інша";
+"newMask.recomendedTime" = "Рекомендований час користування";
+"newMask.time" = "%d годин";
+"newMask.add" = "Додати";
+"mask.used" = "Ви користуєтесь маскою";
+"mask.left" = "Залишилось";
+"mask.times" = "Використано разів";
+"mask.stop" = "Зупинити";
+"mask.start" = "Почати";
+"mask.alert.title" = "Ой леле!";
+"mask.alert.description" = "Настав час змінити фільтр або взяти нову маску. Після цього скиньте таймер кнопкою зверху.";
+"mask.info.title" = "Подбайте про себе!";
+"mask.info.description" = "Не використовуйте маску довше рекомендованого часу. Змінюйте фільтр або маску регулярно, щоб залишатися у безпеці.\n\nВикористовуйте кнопку зверху щоб оновити таймер. Це означатиме, що ви змінили фільтр або взяли нову маску такого ж типу.";
+"notification.title" = "Настав час змін!";
+"notification.body" = "Змініть маску або фільтр";
+"widget.title" = "Mask Tracker Віджет";
+"widget.description" = "Цей віджет показує, скільки запасу маски використано";

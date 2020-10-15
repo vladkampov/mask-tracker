@@ -10,12 +10,16 @@ import CoreData
 
 enum MaskType: LocalizedStringKey {
     case MEDICAL = "Medical"
+    case FABRIC = "Fabric"
+    case FFP2 = "FFP2"
     case FFP3 = "FFP3"
     case CUSTOM = "Custom"
 }
 
 let MaskTypeUseHours = [
     MaskType.MEDICAL: 2,
+    MaskType.FABRIC: 2,
+    MaskType.FFP2: 100,
     MaskType.FFP3: 100,
     MaskType.CUSTOM: 2
 ]
@@ -23,7 +27,6 @@ let MaskTypeUseHours = [
 struct MaskTypeStruct: Identifiable {
     var id = UUID()
     var type: MaskType
-    var image: String
 }
 
 struct NewMaskView: View {
@@ -35,9 +38,11 @@ struct NewMaskView: View {
     @State private var maskImage: String = "Mask Placeholder"
 
     var maskTypes: [MaskTypeStruct] = [
-        MaskTypeStruct(type: MaskType.MEDICAL, image: "Mask Placeholder"),
-        MaskTypeStruct(type: MaskType.FFP3, image: "Mask Placeholder"),
-        MaskTypeStruct(type: MaskType.CUSTOM, image: "Mask Placeholder")
+        MaskTypeStruct(type: MaskType.MEDICAL),
+        MaskTypeStruct(type: MaskType.FABRIC),
+        MaskTypeStruct(type: MaskType.FFP2),
+        MaskTypeStruct(type: MaskType.FFP3),
+        MaskTypeStruct(type: MaskType.CUSTOM),
     ]
 
     func randomizeName() {
@@ -81,7 +86,7 @@ struct NewMaskView: View {
 
     func onTimeChange(t: Int) {
         withAnimation {
-            if t != MaskTypeUseHours[MaskType.MEDICAL] && t != MaskTypeUseHours[MaskType.FFP3] {
+            if t != MaskTypeUseHours[MaskType.MEDICAL] && t != MaskTypeUseHours[MaskType.FFP3] && t != MaskTypeUseHours[MaskType.FABRIC] && t != MaskTypeUseHours[MaskType.FFP2] {
                 maskType = MaskType.CUSTOM
             }
         }
@@ -105,19 +110,25 @@ struct NewMaskView: View {
                 Text("newMask.maskNameLabel").font(.headline)
                 HStack {
                     TextField("newMask.maskNamePlaceholder", text: $maskName)
-                    Button(action: randomizeName) {
-                        Text("newMask.random")
-                    }
+// TODO: to be added going forward
+//                    Button(action: randomizeName) {
+//                        Text("newMask.random")
+//                    }
                 }
-                Text("newMask.pickType").font(.headline)
-                Text("newMask.typeDescription")
-                    .font(.caption)
-                Picker(
-                    selection: $maskType, label: Text("Mask Type")) {
-                    ForEach(maskTypes) { m in
-                        Text(m.type.rawValue).tag(m.type)
-                    }
-                }.pickerStyle(SegmentedPickerStyle()).onChange(of: maskType, perform: onMaskTypeChange)
+// TODO: to be added going forward
+//                VStack(alignment: .leading) {
+//                    Text("newMask.pickType").font(.headline)
+//                    Text("newMask.typeDescription")
+//                        .font(.caption)
+//                        .multilineTextAlignment(.leading)
+//                        .frame(height: 40.0)
+//                }
+//                Picker(
+//                    selection: $maskType, label: Text("Mask Type")) {
+//                    ForEach(maskTypes) { m in
+//                        Text(m.type.rawValue).tag(m.type)
+//                    }
+//                }.pickerStyle(WheelPickerStyle()).onChange(of: maskType, perform: onMaskTypeChange)
                 Text("newMask.recomendedTime").font(.headline)
                 Picker("", selection: $hours) {
                     ForEach(0..<150) { i in

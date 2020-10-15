@@ -9,22 +9,21 @@ import SwiftUI
 import CoreData
 
 struct NewMaskListItemView: View {
-
+    var listLength: Int;
+    
     var body: some View {
         return NavigationLink(
             destination: NewMaskView()) {
-            GeometryReader { geometry in
-                CardView(title: "newMaskCard.title", description: "newMaskCard.description", image: "Mask Placeholder", isRunning: false)
-                    .rotation3DEffect(
-                        Angle(degrees: (Double(geometry.frame(in: .global).minX) - 40) / 20 ),
-                        axis: (x: 0.0, y: 10.0, z: 0.0))
-            }.frame(width: 246)
+            CardView(title: "newMaskCard.title", description: listLength == 0 ? "newMaskCard.descriptionZero" : "newMaskCard.description", image: "Mask Placeholder", isRunning: false)
         }
     }
 }
 
 struct NewMaskListItemView_Previews: PreviewProvider {
     static var previews: some View {
-        NewMaskListItemView()
+        HStack {
+            NewMaskListItemView(listLength: 0)
+            NewMaskListItemView(listLength: 2)
+        }
     }
 }

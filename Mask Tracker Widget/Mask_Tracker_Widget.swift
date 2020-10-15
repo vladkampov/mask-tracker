@@ -85,6 +85,7 @@ struct Mask_Tracker_Widget: Widget {
         }
         .configurationDisplayName(NSLocalizedString("widget.title", comment: "widget title"))
         .description(NSLocalizedString("widget.description", comment: "widget description"))
+        .supportedFamilies([.systemSmall])
     }
 }
 

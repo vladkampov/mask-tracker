@@ -10,6 +10,7 @@ import Foundation
 import CoreData
 import UserNotifications
 import WidgetKit
+import NotificationCenter
 
 @objc(MaskData)
 public class MaskData: NSManagedObject {
@@ -25,7 +26,16 @@ public class MaskData: NSManagedObject {
                 self.secondsInUse += 1
             }
         }
+
         resetWidgets()
+
+        NotificationCenter.default.addObserver(self, selector: #selector(onBackFromBG), name: UIApplication.willEnterForegroundNotification, object: nil)
+    }
+
+    @objc func onBackFromBG() {
+        if self.isCounterActive {
+            self.secondsInUse += Int32(Date().timeIntervalSince(self.changedAt!))
+        }
     }
 
     private func notifyAboutMaskEnd() {

@@ -48,20 +48,13 @@ struct Provider: IntentTimelineProvider {
         }
 
         let entries: [MaskDataEntry] = [MaskDataEntry(configuration: configuration, mask: masks.isEmpty ? nil : masks[0])]
-
-        if !masks.isEmpty && masks[0].isCounterActive {
-            Timer.scheduledTimer(withTimeInterval: 15.0, repeats: true) { (_) in
-                WidgetCenter.shared.reloadAllTimelines()
-            }
-        }
-
         let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
     }
 }
 
 struct MaskDataEntry: TimelineEntry {
-    let date = Calendar.current.date(byAdding: .minute, value: 5, to: Date())!
+    let date = Calendar.current.date(byAdding: .second, value: 20, to: Date())!
     let configuration: ConfigurationIntent
     let mask: MaskData?
 }
@@ -75,10 +68,9 @@ struct Mask_Tracker_WidgetEntryView: View {
                 .scaleEffect(0.7, anchor: .center)
         }
 
-        let (hours, minutes, seconds) = secondsToHoursMinutesSeconds(seconds: Int(entry.mask!.secondsInUse))
         let percent = usedPercentage(current: entry.mask!.secondsInUse, max: entry.mask!.secondsToBeUsed)
 
-        return CardView(title: entry.mask!.name, description: String(format: "%02i:%02i:%02i", hours, minutes, seconds), image: "Mask Placeholder", percent: percent, isRunning: entry.mask!.isCounterActive)
+        return CardView(title: entry.mask!.name, description: String(format: "%.0f%%", percent), image: "Mask Placeholder", percent: percent, isRunning: entry.mask!.isCounterActive)
             .scaleEffect(0.7, anchor: .center)
     }
 }

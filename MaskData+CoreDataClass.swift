@@ -48,7 +48,7 @@ public class MaskData: NSManagedObject {
     private func resetNotification() {
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [self.name])
     }
-    
+
     private func resetWidgets() {
         WidgetCenter.shared.reloadAllTimelines()
     }
@@ -71,8 +71,8 @@ public class MaskData: NSManagedObject {
         timer?.invalidate()
         self.isCounterActive = false
         self.changedAt = Date()
-        
-        if (self.secondsInUse >= self.secondsToBeUsed) {
+
+        if self.secondsInUse >= self.secondsToBeUsed {
             self.usedTimes += self.usedTimes
         }
 

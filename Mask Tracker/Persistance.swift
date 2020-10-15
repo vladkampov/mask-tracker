@@ -48,14 +48,14 @@ struct PersistenceController {
 
     init(inMemory: Bool = false) {
         container = NSPersistentCloudKitContainer(name: "MaskData")
-        
+
         let storeURL = URL.storeURL(for: "group.MaskTracker", databaseName: "group.MaskTracker")
         let storeDescription = NSPersistentStoreDescription(url: storeURL)
         container.persistentStoreDescriptions = [storeDescription]
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         }
-        
+
         container.loadPersistentStores { _, error in
             if let error = error {
                 fatalError(error.localizedDescription)

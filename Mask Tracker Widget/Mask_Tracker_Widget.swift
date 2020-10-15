@@ -26,7 +26,7 @@ struct Provider: IntentTimelineProvider {
         return MaskDataEntry(configuration: ConfigurationIntent(), mask: m)
     }
 
-    func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (MaskDataEntry) -> ()) {
+    func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (MaskDataEntry) -> Void) {
         var masks = [MaskData]()
         let fetchRequest = NSFetchRequest<MaskData>(entityName: "MaskData")
         do {
@@ -38,7 +38,7 @@ struct Provider: IntentTimelineProvider {
         completion(entry)
     }
 
-    func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+    func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
         var masks = [MaskData]()
         let fetchRequest = NSFetchRequest<MaskData>(entityName: "MaskData")
         do {
@@ -46,16 +46,15 @@ struct Provider: IntentTimelineProvider {
         } catch {
             print(error)
         }
-        
-        
+
         let entries: [MaskDataEntry] = [MaskDataEntry(configuration: configuration, mask: masks.isEmpty ? nil : masks[0])]
-        
-        if (!masks.isEmpty && masks[0].isCounterActive) {
-            Timer.scheduledTimer(withTimeInterval: 15.0, repeats: true) { (timer) in
+
+        if !masks.isEmpty && masks[0].isCounterActive {
+            Timer.scheduledTimer(withTimeInterval: 15.0, repeats: true) { (_) in
                 WidgetCenter.shared.reloadAllTimelines()
             }
         }
-        
+
         let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
     }
@@ -67,15 +66,15 @@ struct MaskDataEntry: TimelineEntry {
     let mask: MaskData?
 }
 
-struct Mask_Tracker_WidgetEntryView : View {
+struct Mask_Tracker_WidgetEntryView: View {
     var entry: Provider.Entry
 
     var body: some View {
-        if (entry.mask == nil) {
+        if entry.mask == nil {
             return CardView(title: "newMaskCard.title", description: "newMaskCard.description", image: "Mask Placeholder", isRunning: false)
                 .scaleEffect(0.7, anchor: .center)
         }
-        
+
         let (hours, minutes, seconds) = secondsToHoursMinutesSeconds(seconds: Int(entry.mask!.secondsInUse))
         let percent = usedPercentage(current: entry.mask!.secondsInUse, max: entry.mask!.secondsToBeUsed)
 

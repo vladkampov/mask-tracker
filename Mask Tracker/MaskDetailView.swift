@@ -12,8 +12,7 @@ struct MaskDetailView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @ObservedObject var mask: MaskData
     @State var isPopoverVisible = false
-    
-    
+
     func maskSave() {
         do {
           try viewContext.save()
@@ -106,7 +105,7 @@ struct MaskDetailView: View {
                 .cornerRadius(40)
                 .shadow(radius: 10)
                 .frame(minWidth: 0, maxWidth: .infinity)
-                if (mask.secondsInUse >= mask.secondsToBeUsed) {
+                if mask.secondsInUse >= mask.secondsToBeUsed {
                     ZStack {
                         RoundedRectangle(cornerRadius: 10).fill(Color("Red"))
                         VStack {
@@ -118,7 +117,7 @@ struct MaskDetailView: View {
                                     .padding(.bottom, 5)
                                 Spacer()
                             }
-                            
+
                             HStack {
                                 Text("mask.alert.description")
                                     .font(.footnote)
@@ -142,7 +141,7 @@ struct MaskDetailView: View {
                                     .padding(.bottom, 5)
                                 Spacer()
                             }
-                            
+
                             HStack {
                                 Text("mask.info.description")
                                     .font(.footnote)

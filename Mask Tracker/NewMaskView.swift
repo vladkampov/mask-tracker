@@ -42,7 +42,7 @@ struct NewMaskView: View {
         MaskTypeStruct(type: MaskType.FABRIC),
         MaskTypeStruct(type: MaskType.FFP2),
         MaskTypeStruct(type: MaskType.FFP3),
-        MaskTypeStruct(type: MaskType.CUSTOM),
+        MaskTypeStruct(type: MaskType.CUSTOM)
     ]
 
     func randomizeName() {
@@ -136,7 +136,8 @@ struct NewMaskView: View {
                     }
                 }
                 .pickerStyle(WheelPickerStyle())
-                .onChange(of: hours, perform: onTimeChange)
+// TODO: to be added going forward
+//                .onChange(of: hours, perform: onTimeChange)
                 Button(action: onAdd) {
                     Text("newMask.add")
                         .font(.headline)

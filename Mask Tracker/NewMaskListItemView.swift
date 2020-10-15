@@ -9,8 +9,8 @@ import SwiftUI
 import CoreData
 
 struct NewMaskListItemView: View {
-    var listLength: Int;
-    
+    var listLength: Int
+
     var body: some View {
         return NavigationLink(
             destination: NewMaskView()) {

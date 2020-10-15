@@ -67,7 +67,7 @@ struct MaskDetailView: View {
         return ScrollView(.vertical) {
             VStack {
                 ZStack {
-                    PercentageRing(ringWidth: 50, percent: percent, backgroundColor: Color("Blue3").opacity(0.3), foregroundColors: [Color("Blue3"), Color("Blue2")])
+                    PercentageRing(ringWidth: 50, percent: percent, backgroundColor: Color("Blue3").opacity(0.3), foregroundColors: [Color("Blue2")])
                         .frame(width: 300, height: 300, alignment: .center)
                         .cornerRadius(40)
                     VStack {

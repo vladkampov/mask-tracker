@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		82377ACD2538FD140090E084 /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82377ACC2538FD140090E084 /* InformationView.swift */; };
+		82377AD32538FDC90090E084 /* InformationContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82377AD22538FDC90090E084 /* InformationContainerView.swift */; };
+		82377AD72538FDFA0090E084 /* WelcomeTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82377AD62538FDFA0090E084 /* WelcomeTitleView.swift */; };
+		82377ADB2538FE5E0090E084 /* modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82377ADA2538FE5E0090E084 /* modifiers.swift */; };
+		82377ADF2538FEBA0090E084 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82377ADE2538FEBA0090E084 /* WelcomeView.swift */; };
 		8257B6A92531E5A500C2AE69 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8257B6A82531E5A500C2AE69 /* .swiftlint.yml */; };
 		8257B6AD2531E84900C2AE69 /* NewMaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8257B6AC2531E84900C2AE69 /* NewMaskView.swift */; };
 		8257B6B02531ECF800C2AE69 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8257B6AF2531ECF800C2AE69 /* CardView.swift */; };
@@ -82,6 +87,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		82377ACC2538FD140090E084 /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
+		82377AD22538FDC90090E084 /* InformationContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationContainerView.swift; sourceTree = "<group>"; };
+		82377AD62538FDFA0090E084 /* WelcomeTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeTitleView.swift; sourceTree = "<group>"; };
+		82377ADA2538FE5E0090E084 /* modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = modifiers.swift; sourceTree = "<group>"; };
+		82377ADE2538FEBA0090E084 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		8257B6962531DF8400C2AE69 /* MaskListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskListItemView.swift; sourceTree = "<group>"; };
 		8257B6A82531E5A500C2AE69 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		8257B6AC2531E84900C2AE69 /* NewMaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMaskView.swift; sourceTree = "<group>"; wrapsLines = 1; };
@@ -137,6 +147,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		82377ACB2538FCFB0090E084 /* WelcomeView */ = {
+			isa = PBXGroup;
+			children = (
+				82377ACC2538FD140090E084 /* InformationView.swift */,
+				82377AD22538FDC90090E084 /* InformationContainerView.swift */,
+				82377AD62538FDFA0090E084 /* WelcomeTitleView.swift */,
+				82377ADA2538FE5E0090E084 /* modifiers.swift */,
+				82377ADE2538FEBA0090E084 /* WelcomeView.swift */,
+			);
+			path = WelcomeView;
+			sourceTree = "<group>";
+		};
 		82CB25CF2531B5ED00BA3EE7 = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +186,7 @@
 		82CB25DA2531B5ED00BA3EE7 /* Mask Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				82377ACB2538FCFB0090E084 /* WelcomeView */,
 				82B0E0132533503F000CFF93 /* Localizable.strings */,
 				82B0DFF925332E4F000CFF93 /* Mask Tracker.entitlements */,
 				82CB25DB2531B5ED00BA3EE7 /* Mask_TrackerApp.swift */,
@@ -325,8 +348,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				82DEAB1E25338C0B00CAD907 /* Mask_Tracker_Widget.intentdefinition in Sources */,
+				82377ACD2538FD140090E084 /* InformationView.swift in Sources */,
 				82B0E00325332F5D000CFF93 /* PercentageRing.swift in Sources */,
+				82377ADB2538FE5E0090E084 /* modifiers.swift in Sources */,
 				828212AA25321CE80025FB0E /* MaskData+CoreDataClass.swift in Sources */,
+				82377AD72538FDFA0090E084 /* WelcomeTitleView.swift in Sources */,
+				82377AD32538FDC90090E084 /* InformationContainerView.swift in Sources */,
 				82CB25F42531B96500BA3EE7 /* MaskListView.swift in Sources */,
 				82CB25DC2531B5ED00BA3EE7 /* Mask_TrackerApp.swift in Sources */,
 				8257B6AD2531E84900C2AE69 /* NewMaskView.swift in Sources */,
@@ -335,6 +362,7 @@
 				8257B6B02531ECF800C2AE69 /* CardView.swift in Sources */,
 				82CB25FD2531C36200BA3EE7 /* helpers.swift in Sources */,
 				82DEAAEE2533888200CAD907 /* MaskDetailView.swift in Sources */,
+				82377ADF2538FEBA0090E084 /* WelcomeView.swift in Sources */,
 				82DEAAEA2533886C00CAD907 /* NewMaskListItemView.swift in Sources */,
 				82DEAAD9253387DE00CAD907 /* MaskListItemView.swift in Sources */,
 				82B0DFFC25332EC6000CFF93 /* RIngShape.swift in Sources */,

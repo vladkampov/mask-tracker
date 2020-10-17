@@ -35,7 +35,6 @@ struct NewMaskView: View {
     @State private var maskType = MaskType.MEDICAL
     @State private var maskName: String = ""
     @State private var hours: Int = 2
-    @State private var maskImage: String = "Mask Placeholder"
 
     var maskTypes: [MaskTypeStruct] = [
         MaskTypeStruct(type: MaskType.MEDICAL),
@@ -98,9 +97,9 @@ struct NewMaskView: View {
             startPoint: .topLeading,
             endPoint: .bottomLeading)
 
-        return ScrollView(/*@START_MENU_TOKEN@*/.vertical/*@END_MENU_TOKEN@*/, showsIndicators: true) {
+        return ScrollView(/*@START_MENU_TOKEN@*/.vertical/*@END_MENU_TOKEN@*/, showsIndicators: false) {
             VStack(alignment: .center, spacing: 20) {
-                Image(maskImage)
+                Image("Mask Placeholder")
                     .resizable()
                     .clipped()
                     .scaledToFit()
@@ -131,7 +130,7 @@ struct NewMaskView: View {
 //                }.pickerStyle(WheelPickerStyle()).onChange(of: maskType, perform: onMaskTypeChange)
                 Text("newMask.recomendedTime").font(.headline)
                 Picker("", selection: $hours) {
-                    ForEach(0..<150) { i in
+                    ForEach(1..<150) { i in
                         Text(String(format: NSLocalizedString("newMask.time", comment: "amount of hours"), i)).tag(i)
                     }
                 }

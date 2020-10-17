@@ -1,17 +1,15 @@
 //
 //  MaskListItemView.swift
-//  Mask Tracker
+//  Mask Tracker Watch App Extension
 //
-//  Created by Vladyslav Kampov on 10.10.2020.
+//  Created by Vladyslav Kampov on 17.10.2020.
 //
 
 import SwiftUI
 import CoreData
 
 struct MaskListItemView: View {
-    @Environment(\.managedObjectContext) private var viewContext
-
-    @ObservedObject var mask: MaskData
+    @ObservedObject var mask: MaskDataWatch
 
     var body: some View {
         let (hours, minutes, seconds) = secondsToHoursMinutesSeconds(seconds: Int(mask.secondsInUse))
@@ -19,7 +17,7 @@ struct MaskListItemView: View {
 
         return NavigationLink(
             destination: MaskDetailView(mask: mask)) {
-            CardView(title: mask.name, description: String(format: "%02i:%02i:%02i", hours, minutes, seconds), image: mask.image, percent: percent, isRunning: mask.isCounterActive)
+            WatchCardView(title: mask.name, description: String(format: "%02i:%02i:%02i", hours, minutes, seconds), image: "", percent: percent == 0 ? 0.1 : percent, isRunning: mask.isCounterActive)
         }.buttonStyle(PlainButtonStyle())
     }
 }
@@ -27,16 +25,15 @@ struct MaskListItemView: View {
 #if DEBUG
 struct MaskListItemView_Previews: PreviewProvider {
     static var previews: some View {
-        let m = MaskData.init(context: PersistenceController.preview.container.viewContext)
+        let m = MaskDataWatch(context: PersistenceControllerWatch.preview.container.viewContext)
         m.id = UUID()
         m.name = "Lalka"
         m.changedAt = Date()
         m.createdAt = Date()
-        m.image = "Mask Placeholder"
         m.isCounterActive = false
-        m.secondsInUse = 123
+        m.secondsInUse = 0
         m.secondsToBeUsed = 7300
-        return MaskListItemView(mask: m).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        return MaskListItemView(mask: m).environment(\.managedObjectContext, PersistenceControllerWatch.preview.container.viewContext)
     }
 }
 #endif

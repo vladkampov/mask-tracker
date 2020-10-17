@@ -37,7 +37,8 @@ struct MaskListView: View {
 #if DEBUG
 struct MaskListView_Previews: PreviewProvider {
     static var previews: some View {
-        MaskListView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        print( PersistenceController.preview.container.viewContext)
+        return MaskListView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
 #endif

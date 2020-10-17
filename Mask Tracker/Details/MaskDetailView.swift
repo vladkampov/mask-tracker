@@ -11,7 +11,6 @@ import CoreData
 struct MaskDetailView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @ObservedObject var mask: MaskData
-    @State var isPopoverVisible = false
 
     func maskSave() {
         do {
@@ -64,10 +63,10 @@ struct MaskDetailView: View {
             startPoint: .topLeading,
             endPoint: .bottomLeading)
 
-        return ScrollView(.vertical) {
+        return ScrollView(.vertical, showsIndicators: false) {
             VStack {
                 ZStack {
-                    PercentageRing(ringWidth: 50, percent: percent, backgroundColor: Color("Blue3").opacity(0.3), foregroundColors: [Color("Blue2")])
+                    PercentageRing(ringWidth: 50, percent: percent == 0 ? 0.1 : percent, backgroundColor: Color("Blue3").opacity(0.3), foregroundColors: [Color("Blue2")])
                         .frame(width: 300, height: 300, alignment: .center)
                         .cornerRadius(40)
                     VStack {
@@ -175,7 +174,7 @@ struct MaskDetailView: View {
 #if DEBUG
 struct MaskDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        let newItem = MaskData.init(context: PersistenceController.preview.container.viewContext)
+        let newItem = MaskData(context: PersistenceController.preview.container.viewContext)
         newItem.id = UUID()
         newItem.name = "New mask"
         newItem.secondsInUse = 7200

@@ -19,7 +19,6 @@ struct Provider: IntentTimelineProvider {
         m.name = "Lalka"
         m.changedAt = Date()
         m.createdAt = Date()
-        m.image = "Mask Placeholder"
         m.isCounterActive = false
         m.secondsInUse = 545
         m.secondsToBeUsed = 7300
@@ -91,7 +90,7 @@ struct Mask_Tracker_Widget: Widget {
 
 struct Mask_Tracker_Widget_Previews: PreviewProvider {
     static var previews: some View {
-        let m = MaskData.init()
+        let m = MaskData()
 
         return Mask_Tracker_WidgetEntryView(entry: MaskDataEntry(configuration: ConfigurationIntent(), mask: m))
             .previewContext(WidgetPreviewContext(family: .systemSmall))

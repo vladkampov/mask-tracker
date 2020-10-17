@@ -58,45 +58,46 @@ struct PercentageRing: View {
 
     // Returns the (x, y) location of the offset
     private func getEndCircleLocation(frame: CGSize) -> (CGFloat, CGFloat) {
-      // Get angle of the end circle with respect to the start angle
-      let angleOfEndInRadians: Double = relativePercentageAngle.toRadians()
-      let offsetRadius = min(frame.width, frame.height) / 2
-      return (offsetRadius * cos(angleOfEndInRadians).toCGFloat(), offsetRadius * sin(angleOfEndInRadians).toCGFloat())
+        // Get angle of the end circle with respect to the start angle
+        let angleOfEndInRadians: Double = relativePercentageAngle.toRadians()
+        let offsetRadius = min(frame.width, frame.height) / 2
+        return (offsetRadius * cos(angleOfEndInRadians).toCGFloat(), offsetRadius * sin(angleOfEndInRadians).toCGFloat())
     }
 
     private func getEndCircleShadowOffset() -> (CGFloat, CGFloat) {
-      let angleForOffset = absolutePercentageAngle + (self.startAngle + 90)
-      let angleForOffsetInRadians = angleForOffset.toRadians()
-      let relativeXOffset = cos(angleForOffsetInRadians)
-      let relativeYOffset = sin(angleForOffsetInRadians)
-      let xOffset = relativeXOffset.toCGFloat() * PercentageRing.ShadowOffsetMultiplier
-      let yOffset = relativeYOffset.toCGFloat() * PercentageRing.ShadowOffsetMultiplier
-      return (xOffset, yOffset)
+        let angleForOffset = absolutePercentageAngle + (self.startAngle + 90)
+        let angleForOffsetInRadians = angleForOffset.toRadians()
+        let relativeXOffset = cos(angleForOffsetInRadians)
+        let relativeYOffset = sin(angleForOffsetInRadians)
+        let xOffset = relativeXOffset.toCGFloat() * PercentageRing.ShadowOffsetMultiplier
+        let yOffset = relativeYOffset.toCGFloat() * PercentageRing.ShadowOffsetMultiplier
+        return (xOffset, yOffset)
     }
 
     var body: some View {
         // 1. Wrap view in a GeometryReader so that the view has access to its parent size
-         GeometryReader { geometry in
-                         ZStack {
-                           // 2. Background for the ring
-                           RingShape()
-                             .stroke(style: StrokeStyle(lineWidth: self.ringWidth))
-                             .fill(self.backgroundColor)
-                           // 3. Foreground
-                            RingShape(percent: self.percent, startAngle: self.startAngle)
-                              .stroke(style: StrokeStyle(lineWidth: self.ringWidth, lineCap: .round))
-                              .fill(self.ringGradient)
-                            Circle()
-                            .fill(self.lastGradientColor)
-                            .frame(width: self.ringWidth, height: self.ringWidth, alignment: .center)
-                            .offset(x: self.getEndCircleLocation(frame: geometry.size).0,
-                                    y: self.getEndCircleLocation(frame: geometry.size).1)
-                            .shadow(color: PercentageRing.ShadowColor,
-                                    radius: PercentageRing.ShadowRadius,
-                                    x: self.getEndCircleShadowOffset().0,
-                                    y: self.getEndCircleShadowOffset().1)
-                         }
-                        }
+         GeometryReader { _ in
+            ZStack {
+               // 2. Background for the ring
+                RingShape()
+                    .stroke(style: StrokeStyle(lineWidth: self.ringWidth))
+                    .fill(self.backgroundColor)
+               // 3. Foreground
+                RingShape(percent: self.percent, startAngle: self.startAngle)
+                    .stroke(style: StrokeStyle(lineWidth: self.ringWidth, lineCap: .round))
+                    .fill(self.ringGradient)
+//                Circle()
+//                    .fill(self.lastGradientColor)
+//                    .frame(width: self.ringWidth, height: self.ringWidth, alignment: .center)
+//                    .offset(
+//                        x: self.getEndCircleLocation(frame: geometry.size).0,
+//                        y: self.getEndCircleLocation(frame: geometry.size).1)
+//                    .shadow(color: PercentageRing.ShadowColor,
+//                        radius: PercentageRing.ShadowRadius,
+//                        x: self.getEndCircleShadowOffset().0,
+//                        y: self.getEndCircleShadowOffset().1)
+             }
+         }
          // 4. Padding to ensure that the entire ring fits within the view size allocated
          .padding(self.ringWidth / 2)
     }

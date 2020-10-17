@@ -7,10 +7,10 @@
 */
 
 "list.masks" = "Your masks";
-"newMaskCard.title" = "Create new mask";
+"newMaskCard.title" = "Create the new mask";
 "newMaskCard.description" = "Have another one?";
 "newMaskCard.descriptionZero" = "";
-"title.addMask" = "Add mask";
+"title.addMask" = "Add the mask";
 "newMask.maskNameLabel" = "Name your mask";
 "newMask.maskNamePlaceholder" = "Brand new mask";
 "newMask.random" = "Randomize";
@@ -33,6 +33,8 @@
 "mask.alert.description" = "It's time to change the filter or get a new mask of this time. Click the reset button on the top once you did.";
 "mask.info.title" = "Be mindful!";
 "mask.info.description" = "Don't use the mask more than the recomended time. Change filter or the mask frequently to keep yourself safe.\n\nUse reset button in the top if you want to reset the counter. It will mean that you have changed the filter or took the new mask of the same type.";
+"mask.reset" = "Reset the counter";
+"mask.delete" = "Delete the mask";
 "notification.title" = "That's time for change!";
 "notification.body" = "Change the mask or appropriate filter";
 "widget.title" = "Mask Tracker Widget";

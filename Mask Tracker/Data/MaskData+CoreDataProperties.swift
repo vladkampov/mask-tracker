@@ -2,7 +2,7 @@
 //  MaskData+CoreDataProperties.swift
 //  Mask Tracker
 //
-//  Created by Vladyslav Kampov on 10.10.2020.
+//  Created by Vladyslav Kampov on 17.10.2020.
 //
 //
 
@@ -15,15 +15,14 @@ extension MaskData {
         return NSFetchRequest<MaskData>(entityName: "MaskData")
     }
 
+    @NSManaged public var changedAt: Date?
+    @NSManaged public var createdAt: Date
     @NSManaged public var id: UUID
+    @NSManaged public var isCounterActive: Bool
     @NSManaged public var name: String
     @NSManaged public var secondsInUse: Int32
     @NSManaged public var secondsToBeUsed: Int32
     @NSManaged public var usedTimes: Int32
-    @NSManaged public var createdAt: Date
-    @NSManaged public var changedAt: Date?
-    @NSManaged public var isCounterActive: Bool
-    @NSManaged public var image: String
 
 }
 

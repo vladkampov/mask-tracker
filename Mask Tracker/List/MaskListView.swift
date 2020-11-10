@@ -17,12 +17,15 @@ struct MaskListView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \MaskData.createdAt, ascending: false)],
         animation: .default)
     private var masks: FetchedResults<MaskData>
+    
+    private func onContinue() {
+        settings.isWelcomeAccepted = true
+    }
 
     var body: some View {
-
         return NavigationView {
             if !settings.isWelcomeAccepted {
-                WelcomeView()
+                WelcomeView(onContinue: onContinue)
             } else {
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack(spacing: 20) {
@@ -43,7 +46,7 @@ struct MaskListView: View {
 
 #if DEBUG
 struct MaskListView_Previews: PreviewProvider {
-    static var previews: some View {
+    static var previews: some View { 
         print( PersistenceController.preview.container.viewContext)
         return MaskListView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }

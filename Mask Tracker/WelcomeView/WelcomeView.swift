@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct WelcomeView: View {
-    private let userDefaults = UserDefaults.standard
-
-    private func onContinue() {
-        userDefaults.setValue(true, forKey: "isWelcomeAccepted")
+    var onContinue: (() -> ()) = {}
+    
+    func onContinueTap() {
+        onContinue()
     }
 
     var body: some View {
@@ -26,7 +26,7 @@ struct WelcomeView: View {
 
                 Spacer(minLength: 30)
 
-                Button(action: onContinue) {
+                Button(action: onContinueTap) {
                     Text("welcome.continue")
                         .customButton()
                 }

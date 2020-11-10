@@ -11,6 +11,8 @@ import CoreData
 struct MaskDetailView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @ObservedObject var mask: MaskData
+    @State var isDeleteAlertPresent = false
+    @State var isResetAlertPresent = false
 
     func maskSave() {
         do {
@@ -35,18 +37,26 @@ struct MaskDetailView: View {
         }
     }
 
-    func onTimerReset() {
+    func onTimerConirmedReset() {
         withAnimation {
             mask.resetCounter()
             maskSave()
         }
     }
 
-    func onDelete() {
+    func onTimerReset() {
+        self.isResetAlertPresent.toggle()
+    }
+
+    func onConfirmedDelete() {
         withAnimation {
             mask.stopCounter()
             viewContext.delete(mask)
         }
+    }
+
+    func onDelete() {
+        self.isDeleteAlertPresent.toggle()
     }
 
     var body: some View {
@@ -162,11 +172,17 @@ struct MaskDetailView: View {
             }
             .imageScale(.large)
             .frame(width: 44, height: 44, alignment: .trailing)
+            .alert(isPresented: $isDeleteAlertPresent, content: {
+                Alert(title: Text("mask.deleteAlert.title"), message: Text("mask.deleteAlert.description"), primaryButton: .cancel(Text("mask.deleteAlert.cancel")), secondaryButton: .destructive(Text("mask.deleteAlert.confirm"), action: onConfirmedDelete))
+            })
             Button(action: onTimerReset) {
                 Image(systemName: "arrow.counterclockwise.circle")
                     .imageScale(.large)
                     .frame(width: 44, height: 44, alignment: .trailing)
             }
+            .alert(isPresented: $isResetAlertPresent, content: {
+                Alert(title: Text("mask.resetAlert.title"), message: Text("mask.resetAlert.description"), primaryButton: .cancel(Text("mask.resetAlert.cancel")), secondaryButton: .destructive(Text("mask.resetAlert.confirm"), action: onTimerConirmedReset))
+            })
         })
     }
 }

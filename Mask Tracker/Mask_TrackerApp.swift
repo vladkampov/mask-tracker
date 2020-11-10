@@ -23,7 +23,7 @@ struct MaskTrackerApp: App {
     }
 
     var body: some Scene {
-        WindowGroup {
+        return WindowGroup {
             MaskListView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext).onAppear(perform: onLoad)
         }

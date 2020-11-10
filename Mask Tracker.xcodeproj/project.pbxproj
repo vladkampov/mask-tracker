@@ -78,6 +78,7 @@
 		82DEAB472533A0E400CAD907 /* helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CB25FC2531C36200BA3EE7 /* helpers.swift */; };
 		82DEAB502533AA3F00CAD907 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8257B6B22531EF5300C2AE69 /* Colors.xcassets */; };
 		82DEAB532533AA7500CAD907 /* Mask.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82CB25F92531BBFB00BA3EE7 /* Mask.xcassets */; };
+		82F88CF7253C65A000BB9EE7 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F88CF6253C65A000BB9EE7 /* UserSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -204,6 +205,7 @@
 		82DEAB1A25338C0B00CAD907 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82DEAB1C25338C0B00CAD907 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		82DEAB2825338C1200CAD907 /* Mask Tracker WidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Mask Tracker WidgetExtension.entitlements"; sourceTree = "<group>"; };
+		82F88CF6253C65A000BB9EE7 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -342,13 +344,6 @@
 			path = Details;
 			sourceTree = "<group>";
 		};
-		82AF0618253B0D04003A1F2D /* Locales */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Locales;
-			sourceTree = "<group>";
-		};
 		82AF064D253B0E6D003A1F2D /* List */ = {
 			isa = PBXGroup;
 			children = (
@@ -413,7 +408,6 @@
 			isa = PBXGroup;
 			children = (
 				82B0E0132533503F000CFF93 /* Localizable.strings */,
-				82AF0618253B0D04003A1F2D /* Locales */,
 				82AF0617253B0CEA003A1F2D /* Details */,
 				82AF0616253B0CD7003A1F2D /* List */,
 				82AF0611253B0CCB003A1F2D /* Components */,
@@ -428,6 +422,7 @@
 				82CB25FC2531C36200BA3EE7 /* helpers.swift */,
 				82CB25F92531BBFB00BA3EE7 /* Mask.xcassets */,
 				8257B6B22531EF5300C2AE69 /* Colors.xcassets */,
+				82F88CF6253C65A000BB9EE7 /* UserSettings.swift */,
 			);
 			path = "Mask Tracker";
 			sourceTree = SOURCE_ROOT;
@@ -543,7 +538,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1200;
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1210;
 				TargetAttributes = {
 					82AF053E253AFCEB003A1F2D = {
 						CreatedOnToolsVersion = 12.0.1;
@@ -666,6 +661,7 @@
 				82377ACD2538FD140090E084 /* InformationView.swift in Sources */,
 				82B0E00325332F5D000CFF93 /* PercentageRing.swift in Sources */,
 				82377ADB2538FE5E0090E084 /* modifiers.swift in Sources */,
+				82F88CF7253C65A000BB9EE7 /* UserSettings.swift in Sources */,
 				828212AA25321CE80025FB0E /* MaskData+CoreDataClass.swift in Sources */,
 				82377AD72538FDFA0090E084 /* WelcomeTitleView.swift in Sources */,
 				82377AD32538FDC90090E084 /* InformationContainerView.swift in Sources */,
@@ -848,6 +844,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -909,6 +906,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

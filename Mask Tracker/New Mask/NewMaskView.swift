@@ -61,7 +61,7 @@ struct NewMaskView: View {
             newMask.changedAt = Date()
             newMask.isCounterActive = false
             newMask.usedTimes = 0
-
+            print(hours)
             do {
                 try viewContext.save()
                 self.presentationMode.wrappedValue.dismiss()
@@ -131,7 +131,7 @@ struct NewMaskView: View {
                 Text("newMask.recomendedTime").font(.headline)
                 Picker("", selection: $hours) {
                     ForEach(1..<150) { i in
-                        Text(String(format: NSLocalizedString("newMask.time", comment: "amount of hours"), i)).tag(i)
+                        Text(String(format: NSLocalizedString("newMask.time", comment: "amount of hours"), i)).tag(i + 1)
                     }
                 }
                 .pickerStyle(WheelPickerStyle())

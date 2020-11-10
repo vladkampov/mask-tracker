@@ -9,6 +9,8 @@ import SwiftUI
 import CoreData
 
 struct MaskListView: View {
+    @ObservedObject var settings = UserSettings()
+
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
@@ -17,19 +19,24 @@ struct MaskListView: View {
     private var masks: FetchedResults<MaskData>
 
     var body: some View {
+
         return NavigationView {
-            ScrollView(.vertical, showsIndicators: false) {
-                VStack(spacing: 20) {
-                    ForEach(masks) { m in
-                        MaskListItemView(mask: m)
+            if !settings.isWelcomeAccepted {
+                WelcomeView()
+            } else {
+                ScrollView(.vertical, showsIndicators: false) {
+                    VStack(spacing: 20) {
+                        ForEach(masks) { m in
+                            MaskListItemView(mask: m)
+                        }
+                        NewMaskListItemView(listLength: masks.count)
                     }
-                    NewMaskListItemView(listLength: masks.count)
-                }
-                .padding(.all)
-            }.frame(width: UIScreen.main.bounds.width).navigationTitle(Text("list.masks"))
-            .navigationBarItems(
-                trailing: NewMaskButtonView()
-            )
+                    .padding(.all)
+                }.frame(width: UIScreen.main.bounds.width).navigationTitle(Text("list.masks"))
+                .navigationBarItems(
+                    trailing: NewMaskButtonView()
+                )
+            }
         }
     }
 }

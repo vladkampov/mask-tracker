@@ -7,9 +7,13 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct WelcomeView: View {
+    private let userDefaults = UserDefaults.standard
+
+    private func onContinue() {
+        userDefaults.setValue(true, forKey: "isWelcomeAccepted")
+    }
+
     var body: some View {
         ScrollView {
             VStack(alignment: .center) {
@@ -22,10 +26,7 @@ struct WelcomeView: View {
 
                 Spacer(minLength: 30)
 
-                Button(action: {
-                    let generator = UINotificationFeedbackGenerator()
-                    generator.notificationOccurred(.success)
-                }) {
+                Button(action: onContinue) {
                     Text("welcome.continue")
                         .customButton()
                 }

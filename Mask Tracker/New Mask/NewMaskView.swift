@@ -55,13 +55,13 @@ struct NewMaskView: View {
             newMask.id = UUID()
             newMask.name = maskName
             newMask.secondsInUse = 0
-            let seconds = Int32(hours) * 60 * 60
+            let seconds = Int32(hours + 1) * 60 * 60
             newMask.secondsToBeUsed = seconds
             newMask.createdAt = Date()
             newMask.changedAt = Date()
             newMask.isCounterActive = false
             newMask.usedTimes = 0
-            print(hours)
+
             do {
                 try viewContext.save()
                 self.presentationMode.wrappedValue.dismiss()
@@ -131,7 +131,7 @@ struct NewMaskView: View {
                 Text("newMask.recomendedTime").font(.headline)
                 Picker("", selection: $hours) {
                     ForEach(1..<150) { i in
-                        Text(String(format: NSLocalizedString("newMask.time", comment: "amount of hours"), i)).tag(i + 1)
+                        Text(String(format: NSLocalizedString("newMask.time", comment: "amount of hours"), i)).tag(i)
                     }
                 }
                 .pickerStyle(WheelPickerStyle())

@@ -48,18 +48,25 @@ struct PersistenceController {
 
     init(inMemory: Bool = false) {
         container = NSPersistentCloudKitContainer(name: "MaskData")
+//
+//        let storeURL = URL.storeURL(for: "group.MaskTracker", databaseName: "group.MaskTracker")
+//        let storeDescription = NSPersistentStoreDescription(url: storeURL)
+//        container.persistentStoreDescriptions = [storeDescription]
+//        if inMemory {
+//            container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
+//        }
 
-        let storeURL = URL.storeURL(for: "group.MaskTracker", databaseName: "group.MaskTracker")
-        let storeDescription = NSPersistentStoreDescription(url: storeURL)
-        container.persistentStoreDescriptions = [storeDescription]
-        if inMemory {
-            container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
+        guard let description = container.persistentStoreDescriptions.first else {
+            fatalError("###\(#function): Failed to retrieve a persistent store description.")
         }
-
+        description.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
+        description.setOption(true as NSNumber, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
+        
         container.loadPersistentStores { _, error in
             if let error = error {
                 fatalError(error.localizedDescription)
             }
         }
+        container.viewContext.automaticallyMergesChangesFromParent = false
     }
 }

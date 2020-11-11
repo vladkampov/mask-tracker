@@ -9,8 +9,6 @@ import SwiftUI
 import CoreData
 
 struct MaskListView: View {
-    @ObservedObject var settings = UserSettings()
-
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
@@ -18,36 +16,27 @@ struct MaskListView: View {
         animation: .default)
     private var masks: FetchedResults<MaskData>
     
-    private func onContinue() {
-        settings.isWelcomeAccepted = true
-    }
-
     var body: some View {
         return NavigationView {
-            if !settings.isWelcomeAccepted {
-                WelcomeView(onContinue: onContinue)
-            } else {
-                ScrollView(.vertical, showsIndicators: false) {
-                    VStack(spacing: 20) {
-                        ForEach(masks) { m in
-                            MaskListItemView(mask: m)
-                        }
-                        NewMaskListItemView(listLength: masks.count)
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack(spacing: 20) {
+                    ForEach(masks) { m in
+                        MaskListItemView(mask: m)
                     }
-                    .padding(.all)
-                }.frame(width: UIScreen.main.bounds.width).navigationTitle(Text("list.masks"))
-                .navigationBarItems(
-                    trailing: NewMaskButtonView()
-                )
-            }
+                    NewMaskListItemView(listLength: masks.count)
+                }
+                .padding(.all)
+            }.frame(width: UIScreen.main.bounds.width).navigationTitle(Text("list.masks"))
+            .navigationBarItems(
+                trailing: NewMaskButtonView()
+            )
         }
     }
 }
 
 #if DEBUG
 struct MaskListView_Previews: PreviewProvider {
-    static var previews: some View { 
-        print( PersistenceController.preview.container.viewContext)
+    static var previews: some View {
         return MaskListView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

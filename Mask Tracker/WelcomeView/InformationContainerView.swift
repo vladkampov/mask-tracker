@@ -10,11 +10,11 @@ import SwiftUI
 struct InformationContainerView: View {
     var body: some View {
         VStack(alignment: .leading) {
-            InformationView(title: "welcome.title1", subTitle: "welcome.description1", imageName: "slider.horizontal.below.rectangle")
+            InformationView(title: "welcome.title1", subTitle: "welcome.description1", imageName: "shield")
 
-            InformationView(title: "welcome.title2", subTitle: "welcome.description2", imageName: "minus.slash.plus")
+            InformationView(title: "welcome.title2", subTitle: "welcome.description2", imageName: "arrow.counterclockwise")
 
-            InformationView(title: "welcome.title3", subTitle: "welcome.description3", imageName: "checkmark.square")
+//            InformationView(title: "welcome.title3", subTitle: "welcome.description3", imageName: "checkmark.square")
         }
         .padding(.horizontal)
     }
@@ -22,6 +22,6 @@ struct InformationContainerView: View {
 
 struct InformationContainerView_Previews: PreviewProvider {
     static var previews: some View {
-        InformationContainerView()
+        InformationContainerView().environment(\.locale, .init(identifier: "ru"))
     }
 }

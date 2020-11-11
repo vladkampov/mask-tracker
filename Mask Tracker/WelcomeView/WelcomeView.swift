@@ -15,29 +15,24 @@ struct WelcomeView: View {
     }
 
     var body: some View {
-        ScrollView {
             VStack(alignment: .center) {
-
-                Spacer()
-
                 WelcomeTitleView()
 
                 InformationContainerView()
-
-                Spacer(minLength: 30)
-
+                Spacer()
                 Button(action: onContinueTap) {
                     Text("welcome.continue")
                         .customButton()
                 }
-                .padding(.horizontal)
+                .padding(.all)
             }
-        }
     }
 }
 
 struct WelcomeView_Previews: PreviewProvider {
     static var previews: some View {
-        WelcomeView()
+        Group {
+            WelcomeView().environment(\.locale, .init(identifier: "uk"))
+        }
     }
 }

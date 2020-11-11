@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct InformationView: View {
-    var title: String = "title"
-    var subTitle: String = "subTitle"
+    var title: LocalizedStringKey = "welcome.title1"
+    var subTitle: LocalizedStringKey = "welcome.description1"
     var imageName: String = "car"
 
     var body: some View {
@@ -38,6 +38,6 @@ struct InformationView: View {
 
 struct InformationView_Previews: PreviewProvider {
     static var previews: some View {
-        InformationView()
+        InformationView().environment(\.locale, .init(identifier: "uk"))
     }
 }

@@ -14,7 +14,7 @@ class UserSettings: ObservableObject {
             UserDefaults.standard.set(isWelcomeAccepted, forKey: "isWelcomeAccepted")
         }
     }
-    
+
     init() {
         self.isWelcomeAccepted = UserDefaults.standard.object(forKey: "isWelcomeAccepted") as? Bool ?? false
     }

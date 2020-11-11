@@ -32,6 +32,7 @@ struct PersistenceController {
             newItem.createdAt = Date()
             newItem.changedAt = Date()
             newItem.isCounterActive = false
+            newItem.staticSecondsInUse = 0
         }
         do {
             try viewContext.save()
@@ -61,7 +62,7 @@ struct PersistenceController {
         }
         description.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
         description.setOption(true as NSNumber, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
-        
+
         container.loadPersistentStores { _, error in
             if let error = error {
                 fatalError(error.localizedDescription)

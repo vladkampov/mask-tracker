@@ -10,7 +10,7 @@ import CoreData
 
 struct Main: View {
     @ObservedObject var settings = UserSettings()
-    
+
     private func onContinue() {
         settings.isWelcomeAccepted = true
     }

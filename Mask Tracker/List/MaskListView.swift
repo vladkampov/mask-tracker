@@ -15,7 +15,7 @@ struct MaskListView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \MaskData.createdAt, ascending: false)],
         animation: .default)
     private var masks: FetchedResults<MaskData>
-    
+
     var body: some View {
         return NavigationView {
             ScrollView(.vertical, showsIndicators: false) {

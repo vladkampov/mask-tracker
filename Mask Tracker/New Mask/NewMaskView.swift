@@ -61,6 +61,7 @@ struct NewMaskView: View {
             newMask.changedAt = Date()
             newMask.isCounterActive = false
             newMask.usedTimes = 0
+            newMask.staticSecondsInUse = 0
 
             do {
                 try viewContext.save()

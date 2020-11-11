@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct WelcomeView: View {
-    var onContinue: (() -> ()) = {}
-    
+    var onContinue: (() -> Void) = {}
+
     func onContinueTap() {
         onContinue()
     }

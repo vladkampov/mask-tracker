@@ -61,7 +61,13 @@ struct MaskDetailView: View {
 
     var body: some View {
         let (hours, minutes, seconds) = secondsToHoursMinutesSeconds(seconds: Int(mask.secondsInUse))
-        let (hoursLeft, minutesLeft, secondsLeft) = secondsToHoursMinutesSeconds(seconds: Int(mask.secondsToBeUsed - mask.secondsInUse))
+        var (hoursLeft, minutesLeft, secondsLeft) = secondsToHoursMinutesSeconds(seconds: Int(mask.secondsToBeUsed - mask.secondsInUse))
+        if (mask.secondsToBeUsed - mask.secondsInUse) < 0 {
+            hoursLeft = 0
+            minutesLeft = 0
+            secondsLeft = 0
+        }
+
         let action = mask.isCounterActive ? onTimerStop : onTimerStart
 
         let percent = usedPercentage(current: mask.secondsInUse, max: mask.secondsToBeUsed)

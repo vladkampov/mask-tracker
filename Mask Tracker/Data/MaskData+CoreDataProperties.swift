@@ -10,7 +10,6 @@ import Foundation
 import CoreData
 
 extension MaskData {
-
     @nonobjc public class func fetchRequest() -> NSFetchRequest<MaskData> {
         return NSFetchRequest<MaskData>(entityName: "MaskData")
     }
@@ -23,7 +22,7 @@ extension MaskData {
     @NSManaged public var secondsInUse: Int32
     @NSManaged public var secondsToBeUsed: Int32
     @NSManaged public var usedTimes: Int32
-
+    @NSManaged public var staticSecondsInUse: Int32
 }
 
 extension MaskData: Identifiable {

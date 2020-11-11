@@ -34,7 +34,7 @@ public class MaskData: NSManagedObject {
 
     @objc func onBackFromBG() {
         if self.isCounterActive {
-            self.secondsInUse += Int32(Date().timeIntervalSince(self.changedAt!))
+            self.secondsInUse = self.staticSecondsInUse + Int32(Date().timeIntervalSince(self.changedAt!))
         }
     }
 
@@ -44,7 +44,7 @@ public class MaskData: NSManagedObject {
         content.sound = UNNotificationSound.default
         content.body = NSLocalizedString("notification.body", comment: "notification body")
 
-        // show this notification five seconds from now
+        // show this notification "left time" from now
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(self.secondsToBeUsed - self.secondsInUse), repeats: false)
 
         // mask name can be notification identifier
@@ -60,12 +60,14 @@ public class MaskData: NSManagedObject {
     }
 
     private func resetWidgets() {
-        WidgetCenter.shared.reloadAllTimelines()
+// TODO: I'll bring it back after research
+//        WidgetCenter.shared.reloadAllTimelines()
     }
 
     public func startCounter() {
         self.isCounterActive = true
         self.changedAt = Date()
+        self.staticSecondsInUse = self.secondsInUse
         timer = Timer.scheduledTimer(
             withTimeInterval: 1,
             repeats: true
@@ -81,9 +83,10 @@ public class MaskData: NSManagedObject {
         timer?.invalidate()
         self.isCounterActive = false
         self.changedAt = Date()
+        self.staticSecondsInUse = self.secondsInUse
 
         if self.secondsInUse >= self.secondsToBeUsed {
-            self.usedTimes += self.usedTimes
+            self.usedTimes += 1
         }
 
         resetNotification()
@@ -95,7 +98,7 @@ public class MaskData: NSManagedObject {
         self.isCounterActive = false
         self.changedAt = Date()
         self.secondsInUse = 0
-        self.usedTimes += self.usedTimes
+        self.usedTimes += 1
 
         resetNotification()
         resetWidgets()

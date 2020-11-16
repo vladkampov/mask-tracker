@@ -57,11 +57,11 @@ struct PersistenceController {
 //            container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
 //        }
 
-        guard let description = container.persistentStoreDescriptions.first else {
-            fatalError("###\(#function): Failed to retrieve a persistent store description.")
-        }
-        description.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
-        description.setOption(true as NSNumber, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
+//        guard let description = container.persistentStoreDescriptions.first else {
+//            fatalError("###\(#function): Failed to retrieve a persistent store description.")
+//        }
+//        description.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
+//        description.setOption(true as NSNumber, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
 
         container.loadPersistentStores { _, error in
             if let error = error {

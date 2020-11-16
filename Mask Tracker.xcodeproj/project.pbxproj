@@ -35,18 +35,14 @@
 		82AF0596253B022B003A1F2D /* MaskDataWatch+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AF0594253B022B003A1F2D /* MaskDataWatch+CoreDataClass.swift */; };
 		82AF0597253B022B003A1F2D /* MaskDataWatch+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AF0595253B022B003A1F2D /* MaskDataWatch+CoreDataProperties.swift */; };
 		82AF059D253B02FE003A1F2D /* Persistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AF059C253B02FE003A1F2D /* Persistance.swift */; };
-		82AF05BB253B0680003A1F2D /* MaskData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828212A825321CE80025FB0E /* MaskData+CoreDataClass.swift */; };
 		82AF05F7253B0B98003A1F2D /* helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CB25FC2531C36200BA3EE7 /* helpers.swift */; };
 		82AF05FC253B0C77003A1F2D /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8257B6B22531EF5300C2AE69 /* Colors.xcassets */; };
 		82AF0601253B0C78003A1F2D /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8257B6B22531EF5300C2AE69 /* Colors.xcassets */; };
 		82AF0606253B0C7B003A1F2D /* Mask.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82CB25F92531BBFB00BA3EE7 /* Mask.xcassets */; };
 		82AF060B253B0C7B003A1F2D /* Mask.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82CB25F92531BBFB00BA3EE7 /* Mask.xcassets */; };
-		82AF061D253B0D6B003A1F2D /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8257B6AF2531ECF800C2AE69 /* CardView.swift */; };
 		82AF0627253B0D6F003A1F2D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 82B0E0132533503F000CFF93 /* Localizable.strings */; };
 		82AF062C253B0D70003A1F2D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 82B0E0132533503F000CFF93 /* Localizable.strings */; };
-		82AF0631253B0D92003A1F2D /* RIngShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B0DFFB25332EC6000CFF93 /* RIngShape.swift */; };
 		82AF0632253B0D92003A1F2D /* RIngShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B0DFFB25332EC6000CFF93 /* RIngShape.swift */; };
-		82AF0633253B0D92003A1F2D /* PercentageRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B0E00225332F5D000CFF93 /* PercentageRing.swift */; };
 		82AF0634253B0D92003A1F2D /* PercentageRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B0E00225332F5D000CFF93 /* PercentageRing.swift */; };
 		82AF064F253B0E8F003A1F2D /* MaskListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AF064E253B0E8F003A1F2D /* MaskListItemView.swift */; };
 		82AF0656253B0ECF003A1F2D /* MaskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AF0655253B0ECF003A1F2D /* MaskDetailView.swift */; };
@@ -65,20 +61,6 @@
 		82DEAAD9253387DE00CAD907 /* MaskListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8257B6962531DF8400C2AE69 /* MaskListItemView.swift */; };
 		82DEAAEA2533886C00CAD907 /* NewMaskListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8257B6B52531FA4D00C2AE69 /* NewMaskListItemView.swift */; };
 		82DEAAEE2533888200CAD907 /* MaskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CB25FF2531C61D00BA3EE7 /* MaskDetailView.swift */; };
-		82DEAB1325338C0A00CAD907 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82DEAB1225338C0A00CAD907 /* WidgetKit.framework */; };
-		82DEAB1525338C0A00CAD907 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82DEAB1425338C0A00CAD907 /* SwiftUI.framework */; };
-		82DEAB1825338C0A00CAD907 /* Mask_Tracker_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DEAB1725338C0A00CAD907 /* Mask_Tracker_Widget.swift */; };
-		82DEAB1B25338C0B00CAD907 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82DEAB1A25338C0B00CAD907 /* Assets.xcassets */; };
-		82DEAB1D25338C0B00CAD907 /* Mask_Tracker_Widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 82DEAB1925338C0A00CAD907 /* Mask_Tracker_Widget.intentdefinition */; };
-		82DEAB1E25338C0B00CAD907 /* Mask_Tracker_Widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 82DEAB1925338C0A00CAD907 /* Mask_Tracker_Widget.intentdefinition */; };
-		82DEAB2125338C0B00CAD907 /* Mask Tracker WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 82DEAB1025338C0A00CAD907 /* Mask Tracker WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		82DEAB2B25338D0D00CAD907 /* MaskData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828212A925321CE80025FB0E /* MaskData+CoreDataProperties.swift */; };
-		82DEAB3125338F1D00CAD907 /* Persistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8257B6DD25320FE700C2AE69 /* Persistance.swift */; };
-		82DEAB342533913000CAD907 /* MaskData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8257B6F42532177A00C2AE69 /* MaskData.xcdatamodeld */; };
-		82DEAB372533932900CAD907 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 82B0E0132533503F000CFF93 /* Localizable.strings */; };
-		82DEAB472533A0E400CAD907 /* helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CB25FC2531C36200BA3EE7 /* helpers.swift */; };
-		82DEAB502533AA3F00CAD907 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8257B6B22531EF5300C2AE69 /* Colors.xcassets */; };
-		82DEAB532533AA7500CAD907 /* Mask.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82CB25F92531BBFB00BA3EE7 /* Mask.xcassets */; };
 		82F88CF7253C65A000BB9EE7 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F88CF6253C65A000BB9EE7 /* UserSettings.swift */; };
 		82FE6F13255B452A00656DB0 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82FE6F12255B452A00656DB0 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
@@ -97,13 +79,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 82AF053E253AFCEB003A1F2D;
 			remoteInfo = "Mask Tracker Watch App";
-		};
-		82DEAB1F25338C0B00CAD907 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 82CB25D02531B5ED00BA3EE7 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 82DEAB0F25338C0A00CAD907;
-			remoteInfo = "Mask Tracker WidgetExtension";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -136,7 +111,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				82DEAB2125338C0B00CAD907 /* Mask Tracker WidgetExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,13 +174,8 @@
 		82CB25F92531BBFB00BA3EE7 /* Mask.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Mask.xcassets; path = "Mask Tracker/Mask.xcassets"; sourceTree = SOURCE_ROOT; };
 		82CB25FC2531C36200BA3EE7 /* helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = helpers.swift; path = "Mask Tracker/helpers.swift"; sourceTree = SOURCE_ROOT; };
 		82CB25FF2531C61D00BA3EE7 /* MaskDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MaskDetailView.swift; path = "Mask Tracker/Details/MaskDetailView.swift"; sourceTree = SOURCE_ROOT; };
-		82DEAB1025338C0A00CAD907 /* Mask Tracker WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Mask Tracker WidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		82DEAB1225338C0A00CAD907 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		82DEAB1425338C0A00CAD907 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		82DEAB1725338C0A00CAD907 /* Mask_Tracker_Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mask_Tracker_Widget.swift; sourceTree = "<group>"; };
-		82DEAB1925338C0A00CAD907 /* Mask_Tracker_Widget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Mask_Tracker_Widget.intentdefinition; sourceTree = "<group>"; };
-		82DEAB1A25338C0B00CAD907 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		82DEAB1C25338C0B00CAD907 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		82DEAB2825338C1200CAD907 /* Mask Tracker WidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Mask Tracker WidgetExtension.entitlements"; sourceTree = "<group>"; };
 		82F88CF6253C65A000BB9EE7 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		82FE6F12255B452A00656DB0 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -225,15 +194,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				82FE6F13255B452A00656DB0 /* CloudKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		82DEAB0D25338C0A00CAD907 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				82DEAB1525338C0A00CAD907 /* SwiftUI.framework in Frameworks */,
-				82DEAB1325338C0A00CAD907 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,7 +349,6 @@
 				82DEAB2825338C1200CAD907 /* Mask Tracker WidgetExtension.entitlements */,
 				8257B6A82531E5A500C2AE69 /* .swiftlint.yml */,
 				82CB25DA2531B5ED00BA3EE7 /* Mask Tracker */,
-				82DEAB1625338C0A00CAD907 /* Mask Tracker Widget */,
 				82AF0540253AFCEB003A1F2D /* Mask Tracker Watch App */,
 				82AF054C253AFCEC003A1F2D /* Mask Tracker Watch App Extension */,
 				82DEAB1125338C0A00CAD907 /* Frameworks */,
@@ -402,7 +361,6 @@
 			isa = PBXGroup;
 			children = (
 				82CB25D82531B5ED00BA3EE7 /* Mask Tracker.app */,
-				82DEAB1025338C0A00CAD907 /* Mask Tracker WidgetExtension.appex */,
 				82AF053F253AFCEB003A1F2D /* Mask Tracker Watch App.app */,
 				82AF0548253AFCEC003A1F2D /* Mask Tracker Watch App Extension.appex */,
 			);
@@ -450,17 +408,6 @@
 				82DEAB1425338C0A00CAD907 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		82DEAB1625338C0A00CAD907 /* Mask Tracker Widget */ = {
-			isa = PBXGroup;
-			children = (
-				82DEAB1725338C0A00CAD907 /* Mask_Tracker_Widget.swift */,
-				82DEAB1925338C0A00CAD907 /* Mask_Tracker_Widget.intentdefinition */,
-				82DEAB1A25338C0B00CAD907 /* Assets.xcassets */,
-				82DEAB1C25338C0B00CAD907 /* Info.plist */,
-			);
-			path = "Mask Tracker Widget";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -513,30 +460,12 @@
 			buildRules = (
 			);
 			dependencies = (
-				82DEAB2025338C0B00CAD907 /* PBXTargetDependency */,
 				82AF055F253AFCED003A1F2D /* PBXTargetDependency */,
 			);
 			name = "Mask Tracker";
 			productName = "Mask Tracker";
 			productReference = 82CB25D82531B5ED00BA3EE7 /* Mask Tracker.app */;
 			productType = "com.apple.product-type.application";
-		};
-		82DEAB0F25338C0A00CAD907 /* Mask Tracker WidgetExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 82DEAB2225338C0B00CAD907 /* Build configuration list for PBXNativeTarget "Mask Tracker WidgetExtension" */;
-			buildPhases = (
-				82DEAB0C25338C0A00CAD907 /* Sources */,
-				82DEAB0D25338C0A00CAD907 /* Frameworks */,
-				82DEAB0E25338C0A00CAD907 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Mask Tracker WidgetExtension";
-			productName = "Mask Tracker WidgetExtension";
-			productReference = 82DEAB1025338C0A00CAD907 /* Mask Tracker WidgetExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -557,9 +486,6 @@
 					82CB25D72531B5ED00BA3EE7 = {
 						CreatedOnToolsVersion = 12.0.1;
 					};
-					82DEAB0F25338C0A00CAD907 = {
-						CreatedOnToolsVersion = 12.0.1;
-					};
 				};
 			};
 			buildConfigurationList = 82CB25D32531B5ED00BA3EE7 /* Build configuration list for PBXProject "Mask Tracker" */;
@@ -578,7 +504,6 @@
 			projectRoot = "";
 			targets = (
 				82CB25D72531B5ED00BA3EE7 /* Mask Tracker */,
-				82DEAB0F25338C0A00CAD907 /* Mask Tracker WidgetExtension */,
 				82AF053E253AFCEB003A1F2D /* Mask Tracker Watch App */,
 				82AF0547253AFCEC003A1F2D /* Mask Tracker Watch App Extension */,
 			);
@@ -622,17 +547,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		82DEAB0E25338C0A00CAD907 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				82DEAB502533AA3F00CAD907 /* Colors.xcassets in Resources */,
-				82DEAB532533AA7500CAD907 /* Mask.xcassets in Resources */,
-				82DEAB1B25338C0B00CAD907 /* Assets.xcassets in Resources */,
-				82DEAB372533932900CAD907 /* Localizable.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -664,7 +578,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82DEAB1E25338C0B00CAD907 /* Mask_Tracker_Widget.intentdefinition in Sources */,
 				82377ACD2538FD140090E084 /* InformationView.swift in Sources */,
 				82B0E00325332F5D000CFF93 /* PercentageRing.swift in Sources */,
 				82377ADB2538FE5E0090E084 /* modifiers.swift in Sources */,
@@ -689,23 +602,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		82DEAB0C25338C0A00CAD907 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				82DEAB1825338C0A00CAD907 /* Mask_Tracker_Widget.swift in Sources */,
-				82DEAB1D25338C0B00CAD907 /* Mask_Tracker_Widget.intentdefinition in Sources */,
-				82AF05BB253B0680003A1F2D /* MaskData+CoreDataClass.swift in Sources */,
-				82AF0633253B0D92003A1F2D /* PercentageRing.swift in Sources */,
-				82DEAB3125338F1D00CAD907 /* Persistance.swift in Sources */,
-				82DEAB2B25338D0D00CAD907 /* MaskData+CoreDataProperties.swift in Sources */,
-				82AF0631253B0D92003A1F2D /* RIngShape.swift in Sources */,
-				82DEAB342533913000CAD907 /* MaskData.xcdatamodeld in Sources */,
-				82AF061D253B0D6B003A1F2D /* CardView.swift in Sources */,
-				82DEAB472533A0E400CAD907 /* helpers.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -718,11 +614,6 @@
 			isa = PBXTargetDependency;
 			target = 82AF053E253AFCEB003A1F2D /* Mask Tracker Watch App */;
 			targetProxy = 82AF055E253AFCED003A1F2D /* PBXContainerItemProxy */;
-		};
-		82DEAB2025338C0B00CAD907 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 82DEAB0F25338C0A00CAD907 /* Mask Tracker WidgetExtension */;
-			targetProxy = 82DEAB1F25338C0B00CAD907 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1014,50 +905,6 @@
 			};
 			name = Release;
 		};
-		82DEAB2325338C0B00CAD907 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = "Mask Tracker WidgetExtension.entitlements";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JKAL24VVB9;
-				INFOPLIST_FILE = "Mask Tracker Widget/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "vladkampov.Mask-Tracker.Mask-Tracker-Widget";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		82DEAB2425338C0B00CAD907 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = "Mask Tracker WidgetExtension.entitlements";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JKAL24VVB9;
-				INFOPLIST_FILE = "Mask Tracker Widget/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "vladkampov.Mask-Tracker.Mask-Tracker-Widget";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1093,15 +940,6 @@
 			buildConfigurations = (
 				82CB25E82531B5ED00BA3EE7 /* Debug */,
 				82CB25E92531B5ED00BA3EE7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		82DEAB2225338C0B00CAD907 /* Build configuration list for PBXNativeTarget "Mask Tracker WidgetExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				82DEAB2325338C0B00CAD907 /* Debug */,
-				82DEAB2425338C0B00CAD907 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
